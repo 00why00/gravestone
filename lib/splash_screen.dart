@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     return FadeTransition(
       opacity: _animation,
       child: Image.network(
-        '',
+        'https://dwz.cn/YgQKIzZf',
         scale: 2.0,
         fit: BoxFit.cover,
       ),

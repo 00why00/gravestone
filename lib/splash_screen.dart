@@ -37,8 +37,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _animation,
-      child: Image.network(
-        'https://dwz.cn/YgQKIzZf',
+      child: Image.asset(
+        "images/splash.jpg",
         scale: 2.0,
         fit: BoxFit.cover,
       ),

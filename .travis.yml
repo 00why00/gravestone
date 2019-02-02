@@ -65,12 +65,12 @@ jobs:
     script:
     - "./flutter/bin/flutter upgrade"
     - "./flutter/bin/flutter -v build apk --release"
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key:
-    secure: DOiFQ8j8JSVDD+Fh08DqKbSnkvPB8gWUTatzJr8jnnQ59b0DTHFNWTw0c8qcMthU9ACf1bqzAEPN9i/fvUOU054pBhTQyZ8FRkB/L/DxDYx3CVjv4kFZNwQdp49NNaxdFsJ3G3NP1g/bvNDFSRta7MJHYGB0dGhP3IPAv/U7GQMvZBMypreuA83a+vhEGAvsY57JmGt8SzOcQyCXh3buswa+gywgTRfnM0jEmJMQK+gaFDU6Pslz2V0IS1bEQHQyNJITyDi7lQNE2bPvdL7isoWov3wZluUTfIj+d/7O1cGx9Qw9D5jsJZ7dXoHowEv8wS3hue4XOwJ84AjlQjrOXUz3yn9AjcVExw/OI4NWSGUIPHN1I3kOqTR914hP7OFdWbCRUYteNBOih7q2L5XiyjORWUzmYY45R4HNzk0Z/saEr1urCxno+Jp5lziifmO4S+0KQ27Is6COmsAP7psww9Hs9+x9UnVbcNiu4y9Edcqs65v3a8M42ELfrf7q8nnqEHRdI2zEvMdMUmk7j9MAEAZVqnnno9LHbvRp0agfCaQ6kJwBMhahsNYVRECIsGVO4WpEQ6ugRDxUFqKWiN0rK9/NITuENkYx5cdZcW2YKOYY/gzpsqqu0ZUdwmK5DW/RNf0XCQDjlOVeuZJqUFQE3f0q+Gjy65O3+IRf12XkKRI=
-  file: "$APK_OUTPUT"
-  on:
-    tags: true
-    repo: 00why00/gravestone
+    deploy:
+      provider: releases
+      skip_cleanup: true
+      api_key:
+        secure: DOiFQ8j8JSVDD+Fh08DqKbSnkvPB8gWUTatzJr8jnnQ59b0DTHFNWTw0c8qcMthU9ACf1bqzAEPN9i/fvUOU054pBhTQyZ8FRkB/L/DxDYx3CVjv4kFZNwQdp49NNaxdFsJ3G3NP1g/bvNDFSRta7MJHYGB0dGhP3IPAv/U7GQMvZBMypreuA83a+vhEGAvsY57JmGt8SzOcQyCXh3buswa+gywgTRfnM0jEmJMQK+gaFDU6Pslz2V0IS1bEQHQyNJITyDi7lQNE2bPvdL7isoWov3wZluUTfIj+d/7O1cGx9Qw9D5jsJZ7dXoHowEv8wS3hue4XOwJ84AjlQjrOXUz3yn9AjcVExw/OI4NWSGUIPHN1I3kOqTR914hP7OFdWbCRUYteNBOih7q2L5XiyjORWUzmYY45R4HNzk0Z/saEr1urCxno+Jp5lziifmO4S+0KQ27Is6COmsAP7psww9Hs9+x9UnVbcNiu4y9Edcqs65v3a8M42ELfrf7q8nnqEHRdI2zEvMdMUmk7j9MAEAZVqnnno9LHbvRp0agfCaQ6kJwBMhahsNYVRECIsGVO4WpEQ6ugRDxUFqKWiN0rK9/NITuENkYx5cdZcW2YKOYY/gzpsqqu0ZUdwmK5DW/RNf0XCQDjlOVeuZJqUFQE3f0q+Gjy65O3+IRf12XkKRI=
+      file: "$APK_OUTPUT"
+      on:
+        tags: true
+        repo: 00why00/gravestone

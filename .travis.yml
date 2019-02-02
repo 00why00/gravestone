@@ -15,7 +15,7 @@ jobs:
         - libstdc++6
         - fonts-droid
     before_script:
-    - git clone https://github.com/flutter/flutter.git -b beta --depth 1
+    - git clone https://github.com/flutter/flutter.git
     script:
     - "./flutter/bin/flutter upgrade"
     - "./flutter/bin/flutter test"
@@ -49,7 +49,7 @@ jobs:
     before_script:
     - openssl aes-256-cbc -K $encrypted_5c0e77c46be7_key -iv $encrypted_5c0e77c46be7_iv -in key.jks.enc -out key.jks -md md5
     - openssl aes-256-cbc -K $encrypted_5c0e77c46be7_key -iv $encrypted_5c0e77c46be7_iv -in key.properties.enc -out key.properties -md md5
-    - git clone https://github.com/flutter/flutter.git -b beta --depth 1
+    - git clone https://github.com/flutter/flutter.git
     script:
     - "./flutter/bin/flutter upgrade"
     - "./flutter/bin/flutter -v build apk --release"

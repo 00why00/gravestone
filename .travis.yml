@@ -47,17 +47,20 @@ jobs:
         - libstdc++6
         - fonts-droid
     before_script:
-    - openssl aes-256-cbc -K $encrypted_8fb6fa77875b_key -iv $encrypted_8fb6fa77875b_iv -in key.jks.enc -out key.jks -d
-    - openssl aes-256-cbc -K $encrypted_8fb6fa77875b_key -iv $encrypted_8fb6fa77875b_iv -in key.properties.enc -out key.properties -d
+    - openssl aes-256-cbc -K $encrypted_135fa461c27d_key -iv $encrypted_135fa461c27d_iv
+      -in key.jks.enc -out key.jks -d
+    - openssl aes-256-cbc -K $encrypted_135fa461c27d_key -iv $encrypted_135fa461c27d_iv
+      -in key.properties.enc -out key.properties -d
     - git clone https://github.com/flutter/flutter.git -b beta --depth 1
     script:
     - "./flutter/bin/flutter upgrade"
     - "./flutter/bin/flutter -v build apk --release"
-    deploy:
-      provider: releases
-      skip_cleanup: true
-      api_key:
-        secure: uDRE0d3gZ5JYhl/jBiDp5zv32fHW0WMhJuhg/H4oDOxvYvyCD/1dmBMb00fFFL4gDFxl96wCGMnFcn3f55Xy8IeVMocvrQrIwRkEWsD+4vpzxFr+EBNObjyFW/jQJR3FNXpOJfWNt5unpRsmwWhUpuo7s/PJ1ONqZTctt0VYHXHY5ACmdPx9Tf6U0iAUloQyBeIfYtLN82fB4gewx7sKCnQulerGquXduthVj8URXZzS/3jMJqPL2cqGsjKZ79DPDLzVAulMmhFHs6VVeM2F2HO/GKx58ApLkltFNdoXjdmGSlvuqT1ZAJ0fOlVW78hEVmpxbbQlDPztHThFDlag4uPnlgAFm+OUZ5XXJBeJGkrGU6zRGIcghTQng9JQ3wvL1LVr+2c/MVU8n7+E2SQs7f7TF8kvSm4ok2FpH5zgEuiTIZSNicJO4ceLtigRLySnmbjgKXL1f9O1P8OENuU4hFJ+6WNJtSkzG/MeDGUKPE29rZxA62/+gmQAywDCq7R70kUae4P0XHeneorWnSUyuHhIyRVl0fY22q7U8cY6eTmARTDRKVlykFLvUN2KV8HG2f+VReG64IX93Ge48YI8H8QqeY38HzJQ0nuuF1W84omOFJKtLdtJhg2/5uiaPe7kQ1SmIcrIuqLLZqA0GelP+wLEOtGCm6bMpZdeJECPRbw=
-      file: $APK_OUTPUT
-      on:
-        tags: true
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: DOiFQ8j8JSVDD+Fh08DqKbSnkvPB8gWUTatzJr8jnnQ59b0DTHFNWTw0c8qcMthU9ACf1bqzAEPN9i/fvUOU054pBhTQyZ8FRkB/L/DxDYx3CVjv4kFZNwQdp49NNaxdFsJ3G3NP1g/bvNDFSRta7MJHYGB0dGhP3IPAv/U7GQMvZBMypreuA83a+vhEGAvsY57JmGt8SzOcQyCXh3buswa+gywgTRfnM0jEmJMQK+gaFDU6Pslz2V0IS1bEQHQyNJITyDi7lQNE2bPvdL7isoWov3wZluUTfIj+d/7O1cGx9Qw9D5jsJZ7dXoHowEv8wS3hue4XOwJ84AjlQjrOXUz3yn9AjcVExw/OI4NWSGUIPHN1I3kOqTR914hP7OFdWbCRUYteNBOih7q2L5XiyjORWUzmYY45R4HNzk0Z/saEr1urCxno+Jp5lziifmO4S+0KQ27Is6COmsAP7psww9Hs9+x9UnVbcNiu4y9Edcqs65v3a8M42ELfrf7q8nnqEHRdI2zEvMdMUmk7j9MAEAZVqnnno9LHbvRp0agfCaQ6kJwBMhahsNYVRECIsGVO4WpEQ6ugRDxUFqKWiN0rK9/NITuENkYx5cdZcW2YKOYY/gzpsqqu0ZUdwmK5DW/RNf0XCQDjlOVeuZJqUFQE3f0q+Gjy65O3+IRf12XkKRI=
+  file: "$APK_OUTPUT"
+  on:
+    tags: true
+    repo: 00why00/gravestone

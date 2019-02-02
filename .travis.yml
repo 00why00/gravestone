@@ -69,7 +69,7 @@ jobs:
     # Set up git user name and tag this commit
     - git config --local user.name "00why00"
     - git config --local user.email "894321963@163.com"
-    - export TRAVIS_TAG= "0.1.0"
+    - export TRAVIS_TAG="0.1.0"
     - git tag $TRAVIS_TAG
     deploy:
       provider: releases

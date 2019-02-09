@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'pages/home_screen.dart';
 import 'pages/email_screen.dart';
 import 'pages/pages_screen.dart';
-import 'pages/airplay_screen.dart';
+import 'pages/person_screen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -17,10 +17,10 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   @override
   void initState(){
     list
-      ..add(HomeScreen())
+      ..add(GraveListPage())
       ..add(EmailScreen())
       ..add(PagesScreen())
-      ..add(AirplayScreen());
+      ..add(PersonScreen());
     super.initState();
   }
 
@@ -36,7 +36,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             color: _bottomNavigationColor,
           ),
           title: Text(
-            'Home',
+            '主页',
             style: TextStyle(
               color: _bottomNavigationColor
             )
@@ -48,7 +48,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
               color: _bottomNavigationColor,
             ),
             title: Text(
-                'Email',
+                '消息',
                 style: TextStyle(
                     color: _bottomNavigationColor
                 )
@@ -60,7 +60,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
               color: _bottomNavigationColor,
             ),
             title: Text(
-                'Pages',
+                '收藏',
                 style: TextStyle(
                     color: _bottomNavigationColor
                 )
@@ -68,11 +68,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         ),
         BottomNavigationBarItem(
             icon: Icon(
-              Icons.airplay,
+              Icons.person,
               color: _bottomNavigationColor,
             ),
             title: Text(
-                'Airplay',
+                '我的',
                 style: TextStyle(
                     color: _bottomNavigationColor
                 )
